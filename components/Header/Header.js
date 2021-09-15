@@ -1,12 +1,21 @@
 import styled from "@emotion/styled";
-import Image from 'next/image'
+import Image from "next/image";
 
 const HeaderContainer = styled.header`
   width: var(--mobile-card-width);
   height: 39px;
-  /* border: 1px solid purple; */
   display: flex;
   justify-content: space-between;
+  @media (min-width: 768px) {
+    max-width: 573px;
+    /* border: 1px solid black; */
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 730px;
+
+    /* border: 1px solid blue; */
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -25,7 +34,7 @@ const ToggleContainer = styled.div`
   font-size: 13px;
   letter-spacing: 2.5px;
   /* border: 2px solid black; */
-  > div:first-child{
+  > div:first-child {
     /* border: 1px solid red; */
     margin-right: 16px;
   }
@@ -40,23 +49,16 @@ const Header = ({ logo, children }) => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Image
-          src={logo}
-          layout="fill"
-        />
+        <Image src={logo} layout="fill" />
       </LogoContainer>
       <ToggleContainer>
         <div>DARK</div>
         <ToggleImageContainer>
-          <Image
-            src={"/icon-moon.svg"}
-            width={20}
-            height={20}
-          />
+          <Image src={"/icon-moon.svg"} width={20} height={20} />
         </ToggleImageContainer>
       </ToggleContainer>
     </HeaderContainer>
   );
-}
+};
 
 export default Header;

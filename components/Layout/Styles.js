@@ -8,4 +8,3 @@ export const LayoutContainer = styled.div`
   bottom: 0;
   /* border: 2px solid pink; */
 `;
-

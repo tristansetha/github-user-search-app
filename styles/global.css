@@ -25,6 +25,7 @@ body[data-theme="light"] {
   --color-text-primary: #4b6a9b;
   --color-text-secondary: #697c9a;
   --color-text-header: #222731;
+  --color-accent-primary: #0079ff;
   --color-text-title: #2b3442;
   --color-bg-main: #f6f8ff;
   --color-bg-card: #fefefe;

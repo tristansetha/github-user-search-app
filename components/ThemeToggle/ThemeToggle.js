@@ -4,15 +4,12 @@ import styled from "@emotion/styled";
 import { useState, useEffect } from "react";
 
 const ToggleButton = styled.button`
-
   cursor: pointer;
   /* background: var(--color-bg-toggle); */
   transition: background 0.25s ease-in-out;
 `;
 
-const ToggleThumb = styled.span`
-
-`;
+const ToggleThumb = styled.span``;
 
 const ThemeToggle = () => {
   const [activeTheme, setActiveTheme] = useState("light");
@@ -25,13 +22,8 @@ const ThemeToggle = () => {
     document.body.dataset.theme = activeTheme;
   }, [activeTheme]);
   return (
-    <ToggleButton
-      type="button"
-      onClick={() => setActiveTheme(inactiveTheme)}
-    >
-      <ToggleThumb
-        activeTheme={activeTheme}
-      />
+    <ToggleButton type="button" onClick={() => setActiveTheme(inactiveTheme)}>
+      <ToggleThumb activeTheme={activeTheme} />
       <span>🌙</span>
       <span>☀️</span>
     </ToggleButton>
