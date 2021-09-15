@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const HeaderContainer = styled.header`
   width: var(--mobile-card-width);
@@ -8,13 +9,10 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   @media (min-width: 768px) {
     max-width: 573px;
-    /* border: 1px solid black; */
   }
 
   @media (min-width: 1440px) {
     max-width: 730px;
-
-    /* border: 1px solid blue; */
   }
 `;
 
@@ -28,33 +26,60 @@ const ToggleContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  /* width: 78px;
-  height: 20px; */
+
   font-size: 13px;
   letter-spacing: 2.5px;
-  /* border: 2px solid black; */
-  > div:first-child {
-    /* border: 1px solid red; */
+  > div:first-of-type {
+    color: var(--color-text-theme);
     margin-right: 16px;
+  }
+
+  >div:nth-of-type(2){
   }
 `;
 
+const ToggleButton = styled.span`
+    cursor: pointer;
+
+`;
+
 const ToggleImageContainer = styled.div`
-  /* border: 1px solid black; */
   font-size: 13px;
 `;
 
 const Header = ({ logo, children }) => {
+  const [activeTheme, setActiveTheme] = useState("light");
+  // toggle
+  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+
+  // set variable on body data set
+  useEffect(() => {
+    document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
+
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Image src={logo} layout="fill" />
+        {activeTheme === "light" ? (
+          <Image src="/devfinder.svg" layout="fill" />
+        ) : (
+          <Image src="/devfinder-light.svg" layout="fill" />
+        )}
       </LogoContainer>
       <ToggleContainer>
-        <div>DARK</div>
+        <div>{activeTheme === "light" ?
+          "DARK"
+          :
+          "LIGHT"
+        }</div>
         <ToggleImageContainer>
-          <Image src={"/icon-moon.svg"} width={20} height={20} />
+          <ToggleButton onClick={() => setActiveTheme(inactiveTheme)}>
+            {activeTheme === "light" ? (
+              <Image src={"/icon-moon.svg"} width={20} height={20} />
+            ) : (
+              <Image src={"/icon-sun.svg"} width={20} height={20} />
+            )}
+          </ToggleButton>
         </ToggleImageContainer>
       </ToggleContainer>
     </HeaderContainer>
