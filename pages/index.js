@@ -38,11 +38,11 @@ const Card = styled.section`
 
   @media (min-width: 768px) {
     /* border: 1px solid black; */
+    padding: 40px;
     max-width: 573px;
   }
 
   @media (min-width: 1440px) {
-    /* border: 1px solid blue; */
     padding: 48px;
     align-items: flex-end;
     max-width: 730px;
@@ -69,6 +69,8 @@ const UserDetailsContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
+    gap: 22px;
+
     width: 100%;
     /* border: 1px solid blue; */
   }
@@ -114,6 +116,7 @@ const UserDetailsInfo = styled.div`
     height: 91px;
 
     > div:first-of-type {
+      color: var(--color-text-title);
       font-size: 26px;
       font-weight: 700;
     }
@@ -129,8 +132,10 @@ const UserDetailsInfo = styled.div`
   }
 
   @media (min-width: 1440px) {
+    /* width: 66%; */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* border:1px solid black; */
   }
 `;
 
@@ -152,7 +157,8 @@ const BioContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 66%;
-    margin-top: 20px;
+    /* width: 480px; */
+    margin-top: 0;
     /* border: 1px solid blue; */
   }
 `;
@@ -173,6 +179,9 @@ const StatsContainer = styled.div`
     /* border: 1px solid black; */
   }
   @media (min-width: 768px) {
+    padding: 15px;
+
+    justify-content: space-around;
     min-width: 493px;
     /* border: 1px solid blue; */
   }
@@ -194,16 +203,37 @@ const StatsElement = styled.div`
   /* border: 1px solid black; */
   > div:first-child {
     /* border: 1px solid black; */
+    color: var(--color-text-primary);
     height: 16px;
     font-size: 11px;
     text-align: center;
   }
   > div:nth-child(2) {
     /* border: 1px solid black; */
+    color: var(--color-text-title);
+
     height: 24px;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
+  }
+  @media (min-width: 768px) {
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    >div:first-of-type{
+      text-align: left;
+      font-size: 13px;
+    }
+    > div:nth-child(2) {
+      text-align: left;
+      font-size: 22px;
+
+    }
+    /* border: 1px solid blue; */
+  }
+
+  @media (min-width: 1440px) {
+
   }
 `;
 
@@ -218,7 +248,7 @@ const LinksContainer = styled.div`
   margin-top: 24px;
   /* border: 2px solid purple; */
   @media (min-width: 768px) {
-    /* min-width: 493px; */
+    min-width: 493px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -227,8 +257,7 @@ const LinksContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    width: 76%;
-
+    width: 66%;
     /* border: 1px solid blue; */
   }
 `;
@@ -240,6 +269,7 @@ const LinksElement = styled.div`
   /* justify-content: space-between; */
   /* align-items: center; */
   /* border: 1px solid purple; */
+
   font-size: 13px;
   color: var(--color-text-primary);
 

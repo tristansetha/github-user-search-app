@@ -47,7 +47,9 @@ const SearchInput = styled.input`
   border: none;
   text-align: left;
   line-height: 25px;
-  outline: none;
+  outline: none;  
+  font-family: "Space Mono", monospace;
+  color: var(--color-text-header);
 
   /* text-align: top; */
   /* border:2px solid blue; */

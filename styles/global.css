@@ -8,12 +8,8 @@
   --breakpoint-desktop: 1440px;
 }
 
-html,
-body {
-  font-family: "Space Mono", monospace;
-}
-
 * {
+  font-family: "Space Mono", monospace;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
