@@ -34,13 +34,12 @@ const ToggleContainer = styled.div`
     margin-right: 16px;
   }
 
-  >div:nth-of-type(2){
+  > div:nth-of-type(2) {
   }
 `;
 
 const ToggleButton = styled.span`
-    cursor: pointer;
-
+  cursor: pointer;
 `;
 
 const ToggleImageContainer = styled.div`
@@ -67,11 +66,7 @@ const Header = ({ logo, children }) => {
         )}
       </LogoContainer>
       <ToggleContainer>
-        <div>{activeTheme === "light" ?
-          "DARK"
-          :
-          "LIGHT"
-        }</div>
+        <div>{activeTheme === "light" ? "DARK" : "LIGHT"}</div>
         <ToggleImageContainer>
           <ToggleButton onClick={() => setActiveTheme(inactiveTheme)}>
             {activeTheme === "light" ? (

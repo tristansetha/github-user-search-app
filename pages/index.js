@@ -15,7 +15,45 @@ import {
   LinksElement,
 } from "../styles/homeStyles";
 
-const Home = () => {
+const Home = ({ profile }) => {
+  console.log(profile);
+
+  const {
+    avatar_url,
+    name,
+    login,
+    created_at,
+    bio,
+    public_repos,
+    followers,
+    following,
+    twitter_username,
+    blog,
+    location,
+    company,
+  } = profile;
+  
+  let date = new Date(created_at);
+  let validLocation = location ? true : false
+  let validTwitter = twitter_username ? true : false
+  let validBlog = blog ? true : false
+  let validCompany = company ? true : false
+
+  let months = {
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
+    5: "May",
+    6: "Jun",
+    7: "Jul",
+    8: "Aug",
+    9: "Sept",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec",
+  };
+
   return (
     <Layout>
       <MainContainer>
@@ -24,68 +62,69 @@ const Home = () => {
         <Card>
           <UserDetailsContainer>
             <UserDetailsImageContainer>
-              <Image src={"/Oval.svg"} layout="fill" width={70} height={70} />
+              {/* <Image src={avatar_url} layout="intrinsic" width={70} height={70} /> */}
+              <img src={avatar_url} />
             </UserDetailsImageContainer>
             <UserDetailsInfo>
-              <div>The Octocat</div>
-              <div>@octocat</div>
-              <div id="profile-joined">Joined 25 Jan 2011</div>
+              <div>{name}</div>
+              <div>@{login}</div>
+              <div id="profile-joined">
+                Joined {date.getDay()} {months[date.getMonth() + 1]}{" "}
+                {date.getFullYear()}
+              </div>
             </UserDetailsInfo>
           </UserDetailsContainer>
-          <BioContainer>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            odio. Quisque volutpat mattis eros.
-          </BioContainer>
+          <BioContainer>{bio ? bio : "No bio to be displayed"}</BioContainer>
           <StatsContainer>
             <StatsElement>
               <div>Repos</div>
-              <div>8</div>
+              <div>{public_repos}</div>
             </StatsElement>
             <StatsElement>
               <div>Followers</div>
-              <div>3938</div>
+              <div>{followers}</div>
             </StatsElement>
             <StatsElement>
               <div>Following</div>
-              <div>9</div>
+              <div>{following}</div>
             </StatsElement>
           </StatsContainer>
           <LinksContainer>
-            <LinksElement>
+            <LinksElement valid={validLocation}>
               <Image
                 src="/icon-location.svg"
                 layout="fixed"
                 width={13.75}
                 height={20}
               />
-              <div>San Francisco</div>
+              <div>{location ? location : "Not Available"}</div>
             </LinksElement>
-            <LinksElement>
+            <LinksElement valid={validTwitter}>
               <Image
                 src="/icon-twitter.svg"
                 layout="fixed"
                 width={20}
                 height={16.25}
               />
-              <div>https://github.blog</div>
+              <div>{twitter_username ? twitter_username : "Not Available"}</div>
             </LinksElement>
-            <LinksElement>
+            <LinksElement valid={validBlog}>
               <Image
                 src="/icon-website.svg"
                 layout="fixed"
                 width={19.99}
                 height={19.94}
               />
-              <div>Not Available</div>
+              <div>{blog ? blog : "Not Available"}</div>
             </LinksElement>
-            <LinksElement>
+            <LinksElement valid={validCompany}>
               <Image
                 src="/icon-company.svg"
                 layout="fixed"
                 width={20}
                 height={19.85}
               />
-              <div>@github</div>
+              <div>{company ? company : "Not Available"}</div>
             </LinksElement>
           </LinksContainer>
         </Card>
@@ -93,5 +132,22 @@ const Home = () => {
     </Layout>
   );
 };
+// This function gets called at build time on server-side.
+// It won't be called on client-side, so you can even do
+// direct database queries. See the "Technical details" section.
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch("https://api.github.com/users/Octocat");
+  const profile = await res.json();
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      profile,
+    },
+  };
+}
 
 export default Home;

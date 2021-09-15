@@ -7,16 +7,13 @@ export const MainContainer = styled.main`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  /* border: 3px solid black; */
 `;
 
 export const Card = styled.section`
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
   width: 87%;
   height: 517px;
   margin-top: 16px;
@@ -25,14 +22,10 @@ export const Card = styled.section`
   border-radius: 12px;
   /* box-shadow: 0 10px 25px -10px var(--color-text-secondary); */
   box-shadow: 0 25px 25px -19px rgba(0, 0, 0, 0.1);
-
   /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
-
   /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
-  /* border: 2px solid purple */
 
   @media (min-width: 768px) {
-    /* border: 1px solid black; */
     padding: 40px;
     max-width: 573px;
   }
@@ -50,24 +43,19 @@ export const UserDetailsContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 41px;
-  /* border: 2px solid purple; */
   > div:first-of-type {
     /* border: 2px solid purple; */
   }
-  > div:nth-child(2) {
+  > div:nth-of-type(2) {
   }
 
   @media (min-width: 768px) {
-    /* width: 100%; */
     height: 117px;
-    /* border: 1px solid black; */
   }
 
   @media (min-width: 1440px) {
     gap: 22px;
-
     width: 100%;
-    /* border: 1px solid blue; */
   }
 `;
 
@@ -77,6 +65,14 @@ export const UserDetailsImageContainer = styled.div`
   height: 70px;
   /* border:1px solid black; */
   flex-grow: 0;
+  /* border-radius: 50%;
+  border: 1px solid red; */
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
 
   @media (min-width: 768px) {
     width: 117px;
@@ -104,12 +100,12 @@ export const UserDetailsInfo = styled.div`
     font-weight: 700;
   }
 
-  > div:nth-child(2) {
+  > div:nth-of-type(2) {
     font-size: 13px;
     color: var(--color-text-profile-username);
   }
 
-  >div:nth-child(3){
+  > div:nth-of-type(3) {
     color: var(--color-text-profile-joined);
   }
   @media (min-width: 768px) {
@@ -119,7 +115,6 @@ export const UserDetailsInfo = styled.div`
     > div:first-of-type {
       font-size: 26px;
       font-weight: 700;
-
     }
 
     > div:nth-of-type(2) {
@@ -170,9 +165,7 @@ export const StatsContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  /* min-width: 279px; */
   height: 85px;
-  /* border: 2px solid purple; */
   margin-top: 23px;
   border-radius: 12px;
 
@@ -203,37 +196,28 @@ export const StatsElement = styled.div`
   width: 79px;
   height: 48px;
 
-  /* border: 1px solid black; */
-  > div:first-child {
-    /* border: 1px solid black; */
+  > div:first-of-type {
     height: 16px;
     font-size: 11px;
     text-align: center;
     color: var(--color-text-profile-stats1);
-
   }
-  > div:nth-child(2) {
-    /* border: 1px solid black; */
-
+  > div:nth-of-type(2) {
     height: 24px;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
     color: var(--color-text-profile-stats2);
-
   }
   @media (min-width: 768px) {
-    /* justify-content: flex-start; */
-    /* align-items: flex-start; */
     > div:first-of-type {
       text-align: left;
       font-size: 13px;
     }
-    > div:nth-child(2) {
+    > div:nth-of-type(2) {
       text-align: left;
       font-size: 22px;
     }
-    /* border: 1px solid blue; */
   }
 
   @media (min-width: 1440px) {
@@ -275,9 +259,10 @@ export const LinksElement = styled.div`
   /* border: 1px solid purple; */
 
   font-size: 13px;
-  color: var(--color-text-primary);
+  /* color: var(--color-text-primary); */
+  opacity: ${props =>  props.valid ? "100%" : "50%"};
 
-  > div:nth-child(2) {
+  > div:nth-of-type(2) {
     /* border: 1px solid purple; */
     margin-left: 13px;
   }

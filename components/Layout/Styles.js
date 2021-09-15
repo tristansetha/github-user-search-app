@@ -6,5 +6,4 @@ export const LayoutContainer = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  /* border: 2px solid pink; */
 `;

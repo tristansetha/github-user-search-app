@@ -23,10 +23,10 @@ body[data-theme="light"] {
   --color-text-profile-username: #0079ff;
   --color-text-profile-joined: #697c9a;
   --color-text-profile-bio: #4b6a9b;
-  --color-text-profile-stats1: #4B6A9B;
-  --color-text-profile-stats2: #2B3442;
+  --color-text-profile-stats1: #4b6a9b;
+  --color-text-profile-stats2: #2b3442;
   --color-text-profile-joined: #697c9a;
-  --color-text-profile-links: #4B6A9B;
+  --color-text-profile-links: #4b6a9b;
   --color-text-search: #4b6a9b;
   --color-text-theme: #697c9a;
   /* --color-accent-primary: #0079ff; */

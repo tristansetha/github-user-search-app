@@ -40,13 +40,12 @@ const SearchInput = styled.input`
   outline: none;
   font-family: "Space Mono", monospace;
   color: pink;
-  color: var(--color-text-header);
+  color: var(--color-text-search);
   background-color: inherit;
-
   ::placeholder,
   ::-webkit-input-placeholder {
     color: var(--color-text-search);
-  }  
+  }
 
   @media (min-width: 768px) {
     font-size: 18px;
