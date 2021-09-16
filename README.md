@@ -51,8 +51,6 @@ mobile    | tablet |  desktop
 
 - [flex property](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) 
 
-
-
 ## Author
 
 tristansetha@gmail.com
@@ -61,4 +59,5 @@ tristansetha@gmail.com
 ## Acknowledgments
 
 - [ Contributor sergiodxa ](https://github.com/vercel/swr/issues/254) 
+- [ ROB MORIESON ](https://electricanimals.com/articles/next-js-dark-mode-toggle) 
 
