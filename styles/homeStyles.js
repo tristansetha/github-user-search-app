@@ -10,14 +10,15 @@ export const MainContainer = styled.main`
 `;
 
 export const Card = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 87%;
+  display: grid;
+  grid-template-columns: 0.5fr 1.03fr;
+  grid-template-rows: 0.6fr 0.64fr 0.72fr 1.08fr;
+  column-gap: 19.5px;
+  row-gap: 25px;
+  width: var(--mobile-card-width);
   height: 517px;
   margin-top: 16px;
-  padding: 33px 24px 29px 24px;
+  padding: 24px;
   background-color: var(--color-bg-card);
   border-radius: 12px;
   box-shadow: 0 25px 25px -19px rgba(0, 0, 0, 0.1);
@@ -25,69 +26,66 @@ export const Card = styled.section`
   /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
 
   @media (min-width: 768px) {
+    grid-template-columns: 0.47fr 1.35fr;
+    grid-template-rows: 1.2fr 0.49fr 0.84fr 0.628fr;
+    column-gap: 41px;
     padding: 40px;
     max-width: 573px;
   }
 
   @media (min-width: 1440px) {
+    grid-template-columns: 0.34fr 1.40fr;
+    grid-template-rows: 0.65fr 0.50fr 0.85fr 0.63fr;
+    column-gap: 37px;
+    row-gap: 30px;
     padding: 48px;
-    align-items: flex-end;
     max-width: 730px;
   }
 `;
 
-export const UserDetailsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 41px;
-  > div:first-of-type {
-  }
-  > div:nth-of-type(2) {
-  }
-
-  @media (min-width: 768px) {
-    height: 117px;
-  }
-
-  @media (min-width: 1440px) {
-    gap: 22px;
-    width: 100%;
-  }
-`;
-
 export const UserDetailsImageContainer = styled.div`
-  position: relative;
-  width: 70px;
-  height: 70px;
-  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  >div {
+    position: relative;
+    width: 70px;
+    height: 70px;
+  }
 
   img {
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
   }
 
   @media (min-width: 768px) {
-    width: 117px;
-    height: 117px;
+    >div {
+      width: 117px;
+      height: 117px;
+    }
   }
 
   @media (min-width: 1440px) {
+    align-items: flex-start;
+    grid-row: 1/5;
+    grid-column: 1;
   }
+`;
+
+export const UserDetailInfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 export const UserDetailsInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-grow: 1;
+  width: 100%;
 
-  height: 69px;
   > div:first-of-type {
     color: var(--color-text-profile-name);
-
     font-size: 16px;
     font-weight: 700;
   }
@@ -101,14 +99,10 @@ export const UserDetailsInfo = styled.div`
     color: var(--color-text-profile-joined);
   }
   @media (min-width: 768px) {
-    width: 178px;
-    height: 91px;
-
     > div:first-of-type {
       font-size: 26px;
       font-weight: 700;
     }
-
     > div:nth-of-type(2) {
       font-size: 16px;
       order: 3;
@@ -122,15 +116,16 @@ export const UserDetailsInfo = styled.div`
   @media (min-width: 1440px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    > div:nth-of-type(3) {
+      text-align: right;
+    }
   }
 `;
 
 export const BioContainer = styled.div`
-  width: 102%;
+  grid-column: 1/3;
   padding: 0%;
   height: 75px;
-
-  margin-top: 33px;
   font-size: 13px;
   letter-spacing: 0px;
   line-height: 25px;
@@ -140,20 +135,20 @@ export const BioContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    width: 66%;
-    margin-top: 0;
+    grid-column: 2;
+    font-size: 15px;
+    line-height: 25px;
   }
 `;
 
 export const StatsContainer = styled.div`
+  grid-column: 1/3;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 85px;
-  margin-top: 23px;
   border-radius: 12px;
-
   background-color: var(--color-bg-main);
 
   @media (min-width: 768px) {
@@ -164,6 +159,7 @@ export const StatsContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
+    grid-column: 2;
     width: 66%;
   }
 `;
@@ -207,20 +203,21 @@ export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 57%;
-  height: 127px;
-  margin-top: 24px;
+  grid-column: 1/3;
+  width: 100%;
   color: var(--color-text-profile-links);
   @media (min-width: 768px) {
-    min-width: 493px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 30px;
+    align-items: center;
   }
 
   @media (min-width: 1440px) {
-    width: 66%;
+    row-gap: 0px;
+    width: 100%;
+    grid-column: 2;
+
   }
 `;
 
@@ -236,5 +233,11 @@ export const LinksElement = styled.div`
 
   @media (min-width: 768px) {
     font-size: 15px;
+  }
+
+  @media (min-width: 1440px){
+    > div {
+      font-size: 15px;
+    }
   }
 `;

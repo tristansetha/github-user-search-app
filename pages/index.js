@@ -7,7 +7,7 @@ import Image from "next/image";
 import {
   MainContainer,
   Card,
-  UserDetailsContainer,
+  UserDetailInfoContainer,
   UserDetailsImageContainer,
   UserDetailsInfo,
   BioContainer,
@@ -62,10 +62,12 @@ const Home = ({ profile }) => {
         <Header />
         <Search />
         <Card>
-          <UserDetailsContainer>
-            <UserDetailsImageContainer>
-              <img src={avatar_url} />
-            </UserDetailsImageContainer>
+          <UserDetailsImageContainer>
+            <div>
+              <Image layout="fill" src={avatar_url} />
+            </div>
+          </UserDetailsImageContainer>
+          <UserDetailInfoContainer>
             <UserDetailsInfo>
               <div>{name}</div>
               <div>@{login}</div>
@@ -74,7 +76,7 @@ const Home = ({ profile }) => {
                 {date.getFullYear()}
               </div>
             </UserDetailsInfo>
-          </UserDetailsContainer>
+          </UserDetailInfoContainer>
           <BioContainer>{bio ? bio : "No bio to be displayed"}</BioContainer>
           <StatsContainer>
             <StatsElement>
@@ -133,7 +135,6 @@ const Home = ({ profile }) => {
     </Layout>
   );
 };
-
 
 export async function getStaticProps() {
   const res = await fetch("https://api.github.com/users/Octocat");
