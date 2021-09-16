@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout/Layout";
 import Header from "@/components/Header/Header";
 import Search from "@/components/Search/Search";
-import { AppContext } from '@/context/state';
-import { useContext } from 'react';
+import { AppContext } from "@/context/state";
+import { useContext } from "react";
 import Image from "next/image";
 import {
   MainContainer,
@@ -18,8 +18,7 @@ import {
 } from "../styles/homeStyles";
 
 const Home = ({ profile }) => {
-
-  const { profileContext } = useContext(AppContext)
+  const { profileContext } = useContext(AppContext);
 
   const {
     avatar_url,
@@ -37,10 +36,10 @@ const Home = ({ profile }) => {
   } = Object.entries(profileContext).length === 0 ? profile : profileContext;
 
   let date = new Date(created_at);
-  let validLocation = location ? true : false
-  let validTwitter = twitter_username ? true : false
-  let validBlog = blog ? true : false
-  let validCompany = company ? true : false
+  let validLocation = location ? true : false;
+  let validTwitter = twitter_username ? true : false;
+  let validBlog = blog ? true : false;
+  let validCompany = company ? true : false;
 
   let months = {
     1: "Jan",
@@ -134,7 +133,6 @@ const Home = ({ profile }) => {
     </Layout>
   );
 };
-
 
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do

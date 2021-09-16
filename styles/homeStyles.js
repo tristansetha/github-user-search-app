@@ -63,7 +63,6 @@ export const UserDetailsImageContainer = styled.div`
   height: 70px;
   flex-grow: 0;
 
-
   img {
     width: 100%;
     height: 100%;
@@ -84,7 +83,6 @@ export const UserDetailsInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-
 
   height: 69px;
   > div:first-of-type {
@@ -167,7 +165,6 @@ export const StatsContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 66%;
-
   }
 `;
 
@@ -231,7 +228,7 @@ export const LinksElement = styled.div`
   display: grid;
   grid-template-columns: 1fr 8fr;
   font-size: 13px;
-  opacity: ${props =>  props.valid ? "100%" : "50%"};
+  opacity: ${(props) => (props.valid ? "100%" : "50%")};
 
   > div:nth-of-type(2) {
     margin-left: 13px;
@@ -239,8 +236,5 @@ export const LinksElement = styled.div`
 
   @media (min-width: 768px) {
     font-size: 15px;
-
   }
-
-
 `;
