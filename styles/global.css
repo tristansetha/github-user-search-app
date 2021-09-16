@@ -18,7 +18,6 @@
 body,
 body[data-theme="light"] {
   --search-button-color: #0079ff;
-  /* --color-text-primary: #4b6a9b; */
   --color-text-profile-name: #4b6a9b;
   --color-text-profile-username: #0079ff;
   --color-text-profile-joined: #697c9a;
@@ -29,7 +28,6 @@ body[data-theme="light"] {
   --color-text-profile-links: #4b6a9b;
   --color-text-search: #4b6a9b;
   --color-text-theme: #697c9a;
-  /* --color-accent-primary: #0079ff; */
   --color-text-title: #2b3442;
   --color-bg-main: #f6f8ff;
   --color-bg-card: #fefefe;
@@ -38,7 +36,6 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
   --search-button-color: #0079ff;
-  /* --color-text-primary: #ffffff; */
   --color-text-profile-name: #ffffff;
   --color-text-profile-username: #0079ff;
   --color-text-profile-joined: #ffffff;
@@ -49,36 +46,16 @@ body[data-theme="dark"] {
   --color-text-profile-links: #ffffff;
   --color-text-search: #ffffff;
   --color-text-theme: #ffffff;
-  /* --color-accent-primary: #0079ff; */
   --color-bg-main: #141d2f;
   --color-bg-card: #1e2a47;
   --color-bg-toggle: #ffffff;
-  /* --color-searchbar:  */
 }
 
 body {
   background: var(--color-bg-main);
-  /* color: var(--color-text-primary); */
   transition: background 0.25s ease-in-out;
 }
 
 h1 {
   color: var(--color-text-header);
 }
-/* 
-body,
-body[data-theme="light"] {
-  --color-text-primary: #4B6A9B;
-  --color-text-secondary: #2B3442;
-  --color-text-tertiary: #697C9A;
-  --color-bg-primary: #F6F8FF;
-  --color-bg-secondary: #FEFEFE;
-  --color-bg-toggle: #1e90ff;
-}
-
-body[data-theme="dark"] {
-  --color-text-primary: #0079FF;
-  --color-text-secondary: #FFFF;
-  --color-bg-primary: #F6F8FF;
-  --color-bg-toggle: #1E2A47;
-} */

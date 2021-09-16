@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import Image from "next/image";
 import { LayoutContainer } from "./Styles";
 
 const Layout = ({ children }) => {

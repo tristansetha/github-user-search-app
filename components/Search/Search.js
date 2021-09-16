@@ -1,5 +1,9 @@
+import useSWR from "swr";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "@/context/state"
+
 
 const SearchContainer = styled.header`
   display: flex;
@@ -78,19 +82,62 @@ const SearchButton = styled.button`
   }
 `;
 
+const ErrorMessage = styled.span`
+  color: #F74646
+`;
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 const Search = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [shouldFetch, setShouldFetch] = useState(false);
+  const [errorObj, setErrorObj] = useState({})
+  const { setProfileContext } = useContext(AppContext);
+
+  const handleError = (e) => {
+    setErrorObj(e)
+  }
+
+
+  let { data, error } = useSWR(!shouldFetch ? null : `https://api.github.com/users/${inputValue}`, fetcher)
+
+  useEffect(() => {
+    if (data) {
+      if (data.id != undefined) setProfileContext(data)
+    }
+  }, [data])
+
+  useEffect(() => {
+    if (error) handleError(error)
+  }, [error])
+
+  const handleShouldFetch = (bool) => {
+    setShouldFetch(bool)
+  }
+
+  useEffect(() => {
+    if (shouldFetch) handleShouldFetch(false)
+  }, [data])
+
+
+
+
+  const handleSearch = () => {
+    setShouldFetch(true)
+  }
+
+
   return (
     <SearchContainer>
       <IconContainer>
         <Image
           src={"/icon-search.svg"}
           layout="fill"
-          width={20.05}
-          height={20}
         />
       </IconContainer>
-      <SearchInput placeholder="Search Github username..." />
-      <SearchButton>Search</SearchButton>
+      <SearchInput onChange={(e) => setInputValue(e.target.value)} placeholder="Search Github username..." />
+      <ErrorMessage>{Object.entries(errorObj).length != 0 && errorObj.message === "Not Found" ? "No results" : ""}</ErrorMessage>
+      <SearchButton onClick={handleSearch}>Search</SearchButton>
     </SearchContainer>
   );
 };

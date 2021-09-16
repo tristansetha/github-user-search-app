@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout/Layout";
 import Header from "@/components/Header/Header";
 import Search from "@/components/Search/Search";
+import { AppContext } from '@/context/state';
+import { useContext } from 'react';
 import Image from "next/image";
 import {
   MainContainer,
@@ -16,7 +18,8 @@ import {
 } from "../styles/homeStyles";
 
 const Home = ({ profile }) => {
-  console.log(profile);
+
+  const { profileContext } = useContext(AppContext)
 
   const {
     avatar_url,
@@ -31,8 +34,8 @@ const Home = ({ profile }) => {
     blog,
     location,
     company,
-  } = profile;
-  
+  } = Object.entries(profileContext).length === 0 ? profile : profileContext;
+
   let date = new Date(created_at);
   let validLocation = location ? true : false
   let validTwitter = twitter_username ? true : false
@@ -62,7 +65,6 @@ const Home = ({ profile }) => {
         <Card>
           <UserDetailsContainer>
             <UserDetailsImageContainer>
-              {/* <Image src={avatar_url} layout="intrinsic" width={70} height={70} /> */}
               <img src={avatar_url} />
             </UserDetailsImageContainer>
             <UserDetailsInfo>
@@ -132,15 +134,17 @@ const Home = ({ profile }) => {
     </Layout>
   );
 };
+
+
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
+
   const res = await fetch("https://api.github.com/users/Octocat");
   const profile = await res.json();
-
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
