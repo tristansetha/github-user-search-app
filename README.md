@@ -40,7 +40,7 @@ mobile    | tablet |  desktop
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [@emotion/styled](https://emotion.sh/docs/styled) - For styles
 
 
 ### What I learned
