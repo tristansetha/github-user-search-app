@@ -46,12 +46,10 @@ const ToggleImageContainer = styled.div`
   font-size: 13px;
 `;
 
-const Header = ({ logo, children }) => {
+const Header = () => {
   const [activeTheme, setActiveTheme] = useState("light");
-  // toggle
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
-  // set variable on body data set
   useEffect(() => {
     document.body.dataset.theme = activeTheme;
   }, [activeTheme]);
