@@ -106,7 +106,7 @@ const Search = () => {
   }, [data]);
 
   useEffect(() => {
-    if (error) handleError(error);
+    if (error) handleError(error); console.log(error)
   }, [error]);
 
   const handleShouldFetch = (bool) => {
