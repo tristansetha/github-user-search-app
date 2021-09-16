@@ -100,8 +100,8 @@ const Search = () => {
   );
 
   useEffect(() => {
-    if (data) {
-      if (data.id != undefined) setProfileContext(data);
+    if (data && data.id != undefined) {
+      setProfileContext(data);
     }
   }, [data]);
 
@@ -132,7 +132,7 @@ const Search = () => {
       />
       <ErrorMessage>
         {Object.entries(errorObj).length != 0 &&
-        errorObj.message === "Not Found"
+          errorObj.message === "Not Found"
           ? "No results"
           : ""}
       </ErrorMessage>
