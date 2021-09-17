@@ -82,8 +82,6 @@ const ErrorMessage = styled.span`
   color: #f74646;
 `;
 
-// const fetcher = (url) => fetch(url).then((res) => res.json());
-
 const fetcher = async url => {
   const res = await fetch(url)
   if (!res.ok) {
@@ -140,7 +138,7 @@ const Search = () => {
   return (
     <SearchContainer>
       <IconContainer>
-        <Image src={"/icon-search.svg"} layout="fill" />
+        <Image src={"/icon-search.svg"} layout="fill" alt="Search icon" />
       </IconContainer>
       <SearchInput
         onChange={(e) => setInputValue(e.target.value)}

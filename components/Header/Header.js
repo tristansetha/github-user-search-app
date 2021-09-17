@@ -58,9 +58,9 @@ const Header = () => {
     <HeaderContainer>
       <LogoContainer>
         {activeTheme === "light" ? (
-          <Image src="/devfinder.svg" layout="fill" />
+          <Image src="/devfinder.svg" layout="fill" alt="Devfinder logo" />
         ) : (
-          <Image src="/devfinder-light.svg" layout="fill" />
+          <Image src="/devfinder-light.svg" layout="fill" alt="Devfinder logo" />
         )}
       </LogoContainer>
       <ToggleContainer>
@@ -68,9 +68,9 @@ const Header = () => {
         <ToggleImageContainer>
           <ToggleButton onClick={() => setActiveTheme(inactiveTheme)}>
             {activeTheme === "light" ? (
-              <Image src={"/icon-moon.svg"} width={20} height={20} />
+              <Image src={"/icon-moon.svg"} width={20} height={20} alt="Icon moon" />
             ) : (
-              <Image src={"/icon-sun.svg"} width={20} height={20} />
+              <Image src={"/icon-sun.svg"} width={20} height={20} alt="Icon sun" />
             )}
           </ToggleButton>
         </ToggleImageContainer>

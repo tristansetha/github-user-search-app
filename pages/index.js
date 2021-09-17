@@ -64,7 +64,7 @@ const Home = ({ profile }) => {
         <Card>
           <UserDetailsImageContainer>
             <div>
-              <Image layout="fill" src={avatar_url} />
+              <Image layout="fill" src={avatar_url} alt="User avatar" />
             </div>
           </UserDetailsImageContainer>
           <UserDetailInfoContainer>
@@ -99,6 +99,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={13.75}
                 height={20}
+                alt="Icon location"
               />
               <div>{location ? location : "Not Available"}</div>
             </LinksElement>
@@ -108,6 +109,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={20}
                 height={16.25}
+                alt="Icon twitter"
               />
               <div>{twitter_username ? twitter_username : "Not Available"}</div>
             </LinksElement>
@@ -117,6 +119,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={19.99}
                 height={19.94}
+                alt="Icon website"
               />
               <div>{blog ? blog : "Not Available"}</div>
             </LinksElement>
@@ -126,6 +129,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={20}
                 height={19.85}
+                alt="Icon company"
               />
               <div>{company ? company : "Not Available"}</div>
             </LinksElement>
