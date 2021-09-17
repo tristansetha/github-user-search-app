@@ -82,7 +82,7 @@ const Home = ({ profile }) => {
           <BioContainer>{bio ? bio : "No bio to be displayed"}</BioContainer>
           <StatsContainer>
             <StatsElement>
-              <h1>Repos</h1>
+              <div>Repos</div>
               <div>{public_repos}</div>
             </StatsElement>
             <StatsElement>
