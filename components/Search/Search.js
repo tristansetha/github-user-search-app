@@ -82,17 +82,17 @@ const ErrorMessage = styled.span`
   color: #f74646;
 `;
 
-const fetcher = async url => {
-  const res = await fetch(url)
+const fetcher = async (url) => {
+  const res = await fetch(url);
   if (!res.ok) {
-    const error = new Error('An error occurred while fetching the data.')
-    error.info = await res.json()
-    error.status = res.status
-    throw error
+    const error = new Error("An error occurred while fetching the data.");
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
   }
 
-  return res.json()
-}
+  return res.json();
+};
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
@@ -110,8 +110,8 @@ const Search = () => {
   );
 
   useEffect(() => {
-    setErrorObj({})
-  }, [])
+    setErrorObj({});
+  }, []);
 
   useEffect(() => {
     if (data && data.id != undefined) {
@@ -146,7 +146,7 @@ const Search = () => {
       />
       <ErrorMessage>
         {Object.entries(errorObj).length != 0 &&
-          errorObj.message === "Not Found"
+        errorObj.message === "Not Found"
           ? "No results"
           : ""}
       </ErrorMessage>

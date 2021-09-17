@@ -34,8 +34,8 @@ export const Card = styled.section`
   }
 
   @media (min-width: 1440px) {
-    grid-template-columns: 0.34fr 1.40fr;
-    grid-template-rows: 0.65fr 0.50fr 0.85fr 0.63fr;
+    grid-template-columns: 0.34fr 1.4fr;
+    grid-template-rows: 0.65fr 0.5fr 0.85fr 0.63fr;
     column-gap: 37px;
     row-gap: 30px;
     padding: 48px;
@@ -48,7 +48,7 @@ export const UserDetailsImageContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  >div {
+  > div {
     position: relative;
     width: 70px;
     height: 70px;
@@ -59,7 +59,7 @@ export const UserDetailsImageContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    >div {
+    > div {
       width: 117px;
       height: 117px;
     }
@@ -88,9 +88,8 @@ export const UserDetailsInfo = styled.div`
     color: var(--color-text-profile-name);
     h1 {
       font-size: 16px;
-    font-weight: 700;
+      font-weight: 700;
     }
-
   }
 
   > div:nth-of-type(2) {
@@ -105,7 +104,7 @@ export const UserDetailsInfo = styled.div`
     > div:first-of-type {
       h1 {
         font-size: 26px;
-      font-weight: 700;
+        font-weight: 700;
       }
     }
     > div:nth-of-type(2) {
@@ -222,7 +221,6 @@ export const LinksContainer = styled.div`
     row-gap: 0px;
     width: 100%;
     grid-column: 2;
-
   }
 `;
 
@@ -240,7 +238,7 @@ export const LinksElement = styled.div`
     font-size: 15px;
   }
 
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     > div {
       font-size: 15px;
     }
