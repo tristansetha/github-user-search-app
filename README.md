@@ -13,18 +13,17 @@ Users should be able to:
 - Switch between light and dark themes
 
 ### To do
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS. 
-- Error message for searches with no results
 
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+- Error message for searches with no results
 
 ### Screenshot
 
-mobile    | tablet |  desktop                   
-:-------------------------:|:---:|:-------------------------:
-![mobile-ss](screenshot-mobile.png)| ![mobile-ss](screenshot-tablet.png)|  ![mobile-ss](screenshot-desktop.png)
+|               mobile                |               tablet                |               desktop                |
+| :---------------------------------: | :---------------------------------: | :----------------------------------: |
+| ![mobile-ss](/screenshots/screenshot-mobile.png) | ![mobile-ss](/screenshots/screenshot-tablet.png) | ![mobile-ss](/screenshots/screenshot-desktop.png) |
 
-![mobile-ss](screenshot-desktop-dark.png)
-
+![mobile-ss](/screenshots/screenshot-desktop-dark.png)
 
 ### Links
 
@@ -42,27 +41,25 @@ mobile    | tablet |  desktop
 - [Next.js](https://nextjs.org/) - React framework
 - [@emotion/styled](https://emotion.sh/docs/styled) - For styles
 
-
 ### What I learned
 
-* CSS grids and calculating fr units
+- CSS grids and calculating fr units
 
 ### Continued development
 
-* Responsive grid designs
+- Responsive grid designs
 
 ### Useful resources
 
-- [flex property - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) 
-- [fr units - Webflow](https://www.youtube.com/watch?v=Dp7kOWhAjuo) 
+- [flex property - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
+- [Nextjs data fetching](https://nextjs.org/docs/basic-features/data-fetching)
+- [swr hook](https://swr.vercel.app/docs/with-nextjs)
 
 ## Author
 
 tristansetha@gmail.com
 
-
 ## Acknowledgments
 
-- [ Contributor sergiodxa ](https://github.com/vercel/swr/issues/254) 
-- [ Rob Morieson ](https://electricanimals.com/articles/next-js-dark-mode-toggle) 
-
+- [ Contributor sergiodxa ](https://github.com/vercel/swr/issues/254)
+- [ Rob Morieson ](https://electricanimals.com/articles/next-js-dark-mode-toggle)

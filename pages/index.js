@@ -64,12 +64,14 @@ const Home = ({ profile }) => {
         <Card>
           <UserDetailsImageContainer>
             <div>
-              <Image layout="fill" src={avatar_url} />
+              <Image layout="fill" src={avatar_url} alt="User avatar" />
             </div>
           </UserDetailsImageContainer>
           <UserDetailInfoContainer>
             <UserDetailsInfo>
-              <div>{name}</div>
+              <div>
+                <h1>{name}</h1>
+              </div>
               <div>@{login}</div>
               <div id="profile-joined">
                 Joined {date.getDay()} {months[date.getMonth() + 1]}{" "}
@@ -80,7 +82,7 @@ const Home = ({ profile }) => {
           <BioContainer>{bio ? bio : "No bio to be displayed"}</BioContainer>
           <StatsContainer>
             <StatsElement>
-              <div>Repos</div>
+              <h1>Repos</h1>
               <div>{public_repos}</div>
             </StatsElement>
             <StatsElement>
@@ -99,6 +101,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={13.75}
                 height={20}
+                alt="Icon location"
               />
               <div>{location ? location : "Not Available"}</div>
             </LinksElement>
@@ -108,6 +111,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={20}
                 height={16.25}
+                alt="Icon twitter"
               />
               <div>{twitter_username ? twitter_username : "Not Available"}</div>
             </LinksElement>
@@ -117,6 +121,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={19.99}
                 height={19.94}
+                alt="Icon website"
               />
               <div>{blog ? blog : "Not Available"}</div>
             </LinksElement>
@@ -126,6 +131,7 @@ const Home = ({ profile }) => {
                 layout="fixed"
                 width={20}
                 height={19.85}
+                alt="Icon company"
               />
               <div>{company ? company : "Not Available"}</div>
             </LinksElement>
