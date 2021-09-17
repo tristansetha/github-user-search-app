@@ -82,7 +82,19 @@ const ErrorMessage = styled.span`
   color: #f74646;
 `;
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+// const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const fetcher = async url => {
+  const res = await fetch(url)
+  if (!res.ok) {
+    const error = new Error('An error occurred while fetching the data.')
+    error.info = await res.json()
+    error.status = res.status
+    throw error
+  }
+
+  return res.json()
+}
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
@@ -100,13 +112,17 @@ const Search = () => {
   );
 
   useEffect(() => {
+    setErrorObj({})
+  }, [])
+
+  useEffect(() => {
     if (data && data.id != undefined) {
       setProfileContext(data);
     }
   }, [data]);
 
   useEffect(() => {
-    if (error) handleError(error); console.log(error)
+    if (!!error) handleError(error);
   }, [error]);
 
   const handleShouldFetch = (bool) => {
@@ -115,7 +131,7 @@ const Search = () => {
 
   useEffect(() => {
     if (shouldFetch) handleShouldFetch(false);
-  }, [data]);
+  }, [data || error]);
 
   const handleSearch = () => {
     setShouldFetch(true);

@@ -69,7 +69,7 @@ const Home = ({ profile }) => {
           </UserDetailsImageContainer>
           <UserDetailInfoContainer>
             <UserDetailsInfo>
-              <div>{name}</div>
+              <div><h1>{name}</h1></div>
               <div>@{login}</div>
               <div id="profile-joined">
                 Joined {date.getDay()} {months[date.getMonth() + 1]}{" "}
@@ -80,7 +80,7 @@ const Home = ({ profile }) => {
           <BioContainer>{bio ? bio : "No bio to be displayed"}</BioContainer>
           <StatsContainer>
             <StatsElement>
-              <div>Repos</div>
+              <h1>Repos</h1>
               <div>{public_repos}</div>
             </StatsElement>
             <StatsElement>

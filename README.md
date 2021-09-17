@@ -54,7 +54,8 @@ mobile    | tablet |  desktop
 ### Useful resources
 
 - [flex property - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) 
-- [fr units - Webflow](https://www.youtube.com/watch?v=Dp7kOWhAjuo) 
+- [Nextjs data fetching](https://nextjs.org/docs/basic-features/data-fetching) 
+- [swr hook](https://swr.vercel.app/docs/with-nextjs) 
 
 ## Author
 

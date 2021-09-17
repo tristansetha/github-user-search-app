@@ -86,8 +86,11 @@ export const UserDetailsInfo = styled.div`
 
   > div:first-of-type {
     color: var(--color-text-profile-name);
-    font-size: 16px;
+    h1 {
+      font-size: 16px;
     font-weight: 700;
+    }
+
   }
 
   > div:nth-of-type(2) {
@@ -100,8 +103,10 @@ export const UserDetailsInfo = styled.div`
   }
   @media (min-width: 768px) {
     > div:first-of-type {
-      font-size: 26px;
+      h1 {
+        font-size: 26px;
       font-weight: 700;
+      }
     }
     > div:nth-of-type(2) {
       font-size: 16px;
